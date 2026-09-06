@@ -43,7 +43,11 @@ export default function ResumeModal({ isOpen, onClose }) {
           <div className="bg-slate-950/70 border border-slate-800 rounded-2xl p-5 mb-6 space-y-3">
             <div className="flex justify-between items-center text-xs font-mono text-slate-400 pb-2 border-b border-slate-800">
               <span>Target Role</span>
-              <span className="text-brand-cyan">Software Developer / AI & ML Intern</span>
+              <span className="text-brand-cyan">Software Developer & AI/ML Engineer</span>
+            </div>
+            <div className="flex justify-between items-center text-xs font-mono text-slate-400 pb-2 border-b border-slate-800">
+              <span>Competitive Focus</span>
+              <span className="text-emerald-400">GATE Aspirant (CS / DA)</span>
             </div>
             <div className="flex justify-between items-center text-xs font-mono text-slate-400 pb-2 border-b border-slate-800">
               <span>Degree</span>

@@ -12,10 +12,11 @@ export const personalInfo = {
     "Engineering Student",
     "Software Developer",
     "AI & ML Enthusiast",
+    "GATE Aspirant",
     "Problem Solver"
   ],
-  bioIntro: "I am an Engineering Student passionate about Software Development, Artificial Intelligence, Machine Learning, and building impactful technology solutions.",
-  aboutText: "I am an Engineering Student with a strong interest in Software Development, Artificial Intelligence, Machine Learning, and Deep Learning. I enjoy solving problems, learning new technologies, and building projects that can create meaningful real-world impact.",
+  bioIntro: "I am an Engineering Student and GATE Aspirant passionate about Software Development, Artificial Intelligence, Machine Learning, and building impactful technology solutions.",
+  aboutText: "I am an Engineering Student and GATE Aspirant with a strong interest in Software Development, Artificial Intelligence, Machine Learning, and Deep Learning. Alongside building practical software and ML systems, I am rigorously preparing for the GATE examination, reinforcing my theoretical mastery in Data Structures, Algorithms, Operating Systems, DBMS, and Mathematics.",
   
   // Update these placeholder URLs with your real links
   socialLinks: {
@@ -176,14 +177,14 @@ export const educationData = [
     year: "[Graduation Year: e.g. 2026]",           // PLACEHOLDER: e.g. 2022 - 2026
     cgpa: "[CGPA / Percentage: e.g. 8.5/10]",      // PLACEHOLDER: e.g. 8.5 CGPA
     status: "Currently Pursuing",
-    summary: "Pursuing rigorous undergraduate coursework in computer science and engineering disciplines, with primary elective focus on Artificial Intelligence, Machine Learning algorithms, and scalable software development.",
+    summary: "Pursuing rigorous undergraduate coursework in engineering disciplines with dual emphasis on practical AI/ML software development and in-depth preparation for the GATE Examination in Computer Science & Information Technology / Data Science & AI.",
     keyCoursework: [
       "Data Structures and Algorithms",
       "Object-Oriented Programming (Java/C++)",
       "Database Management Systems & SQL",
       "Operating Systems & Computer Networks",
-      "Machine Learning & Pattern Recognition",
-      "Software Engineering & System Design"
+      "Theory of Computation & Compiler Design",
+      "Machine Learning & Engineering Mathematics"
     ]
   }
 ];
@@ -192,6 +193,15 @@ export const educationData = [
 // ACHIEVEMENTS & CERTIFICATIONS
 // ==============================================================================
 export const achievementsData = [
+  {
+    category: "National Examination",
+    title: "GATE Examination Preparation",
+    subtitle: "Graduate Aptitude Test in Engineering (CS / DA)",
+    badge: "GATE Aspirant",
+    icon: "FiBookOpen",
+    description: "Actively preparing for the GATE examination with rigorous problem solving across core CS disciplines: Discrete Mathematics, Algorithms, OS, DBMS, Computer Networks, and Machine Learning.",
+    date: "[Target: 2026/2027]"
+  },
   {
     category: "Coding Achievements",
     title: "Algorithmic Problem Solving",

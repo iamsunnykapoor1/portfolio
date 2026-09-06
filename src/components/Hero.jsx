@@ -65,7 +65,7 @@ export default function Hero() {
             <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
           </span>
           <span className="text-xs font-mono font-medium text-slate-300">
-            Aspiring Software Developer & AI/ML
+            Aspiring Software Developer • AI/ML • GATE Aspirant
           </span>
         </motion.div>
 

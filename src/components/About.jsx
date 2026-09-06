@@ -111,7 +111,9 @@ export default function About() {
                   "Artificial Intelligence & ML",
                   "Deep Learning & Privacy",
                   "Algorithms & Data Structures",
-                  "Scalable Software Engineering"
+                  "GATE Examination Preparation",
+                  "Scalable Software Engineering",
+                  "Core Computer Science Theory"
                 ].map((item, idx) => (
                   <div key={idx} className="flex items-center gap-2.5 text-slate-300 text-sm">
                     <div className="w-5 h-5 rounded-md bg-brand-indigo/20 border border-brand-indigo/40 flex items-center justify-center shrink-0">
