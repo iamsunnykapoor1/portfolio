@@ -20,9 +20,9 @@ export const personalInfo = {
   
   // Update these placeholder URLs with your real links
   socialLinks: {
-    github: "https://github.com/your-username",       // REPLACE with your GitHub URL
-    linkedin: "https://linkedin.com/in/your-profile",  // REPLACE with your LinkedIn URL
-    email: "sunny.developer.placeholder@example.com",  // REPLACE with your actual Email
+    github: "https://github.com/iamsunnykapoor1",
+    linkedin: "https://linkedin.com/in/iamsunnykapoor1",
+    email: "iamsunnykapoor1@gmail.com",
   },
   
   // Resume placeholder path (put your resume PDF in /public/resume.pdf)
