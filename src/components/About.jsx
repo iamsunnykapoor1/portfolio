@@ -61,12 +61,16 @@ export default function About() {
               {/* Avatar Frame Container */}
               <div className="relative w-64 h-64 sm:w-72 sm:h-72 rounded-3xl bg-slate-900/90 border border-slate-700/80 p-3 shadow-2xl flex flex-col items-center justify-center overflow-hidden">
                 <img
-                  src={personalInfo.avatarUrl}
+                  src={
+                    personalInfo.avatarUrl.startsWith('http')
+                      ? personalInfo.avatarUrl
+                      : `${import.meta.env.BASE_URL}${personalInfo.avatarUrl.replace(/^\//, '')}`
+                  }
                   alt="Sunny Profile Avatar"
                   className="w-full h-full object-contain rounded-2xl transition-transform duration-500 group-hover:scale-105"
                   onError={(e) => {
                     // Fallback to stylized SVG avatar if image not found
-                    e.target.src = '/avatar.svg';
+                    e.target.src = `${import.meta.env.BASE_URL}avatar.svg`;
                   }}
                 />
 

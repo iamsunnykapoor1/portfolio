@@ -71,7 +71,7 @@ export default function ResumeModal({ isOpen, onClose }) {
           {/* Actions */}
           <div className="flex flex-col sm:flex-row gap-3">
             <a
-              href="/resume.pdf"
+              href={`${import.meta.env.BASE_URL}resume.pdf`}
               download={`${personalInfo.name}_Resume.pdf`}
               className="flex-1 inline-flex items-center justify-center gap-2 py-3 px-5 rounded-xl bg-gradient-to-r from-brand-indigo to-brand-purple hover:from-indigo-500 hover:to-purple-500 text-white font-semibold text-sm shadow-lg shadow-indigo-600/30 transition-all"
             >
