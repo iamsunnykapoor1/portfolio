@@ -182,6 +182,17 @@ export default function Contact() {
                   </div>
                   <FiArrowUpRight className="text-slate-500 group-hover:text-brand-blue group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all shrink-0 ml-2" />
                 </a>
+
+                {/* Location & Phone */}
+                <div className="flex items-center justify-between p-4 rounded-2xl bg-slate-900/60 border border-slate-800 text-xs font-mono text-slate-400">
+                  <span className="flex items-center gap-2 text-slate-300">
+                    <FiMapPin size={15} className="text-brand-cyan" />
+                    Pune, India
+                  </span>
+                  <a href="tel:+917209383380" className="text-indigo-400 hover:text-indigo-300 transition-colors">
+                    +91 7209383380
+                  </a>
+                </div>
               </div>
             </div>
           </motion.div>

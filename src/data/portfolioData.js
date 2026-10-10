@@ -6,29 +6,29 @@
 // ==============================================================================
 
 export const personalInfo = {
-  name: "Sunny",
-  tagline: "Engineering Student & Aspiring Software Developer",
+  name: "Sunny Kapoor",
+  tagline: "Computer Science & Engineering Student | AI, Machine Learning & Software Development",
   typingTitles: [
-    "Engineering Student",
     "Software Developer",
+    "CSE Student (CGPA: 9.28)",
     "AI & ML Enthusiast",
     "GATE Aspirant",
     "Problem Solver"
   ],
-  bioIntro: "I am an Engineering Student and GATE Aspirant passionate about Software Development, Artificial Intelligence, Machine Learning, and building impactful technology solutions.",
-  aboutText: "I am an Engineering Student and GATE Aspirant with a strong interest in Software Development, Artificial Intelligence, Machine Learning, and Deep Learning. Alongside building practical software and ML systems, I am rigorously preparing for the GATE examination, reinforcing my theoretical mastery in Data Structures, Algorithms, Operating Systems, DBMS, and Mathematics.",
+  bioIntro: "I am a Computer Science & Engineering student at Bharati Vidyapeeth, Pune, and a GATE Aspirant passionate about Software Development, Artificial Intelligence, Machine Learning, and building impactful technology solutions.",
+  aboutText: "I am a Computer Science & Engineering student at Bharati Vidyapeeth (Deemed to be University), Pune (CGPA: 9.28) and a GATE Aspirant with hands-on experience developing Machine Learning and NLP applications, real-time IoT optimization systems, and data analytics tools. I combine practical engineering skills in Python, Java, SQL, and Streamlit with strong computer science fundamentals in Data Structures, Algorithms, DBMS, and Operating Systems.",
   
-  // Update these placeholder URLs with your real links
+  phone: "+91 7209383380",
+  location: "Pune, India",
+
+  // Real links
   socialLinks: {
     github: "https://github.com/iamsunnykapoor1",
     linkedin: "https://linkedin.com/in/iamsunnykapoor1",
     email: "iamsunnykapoor1@gmail.com",
   },
   
-  // Resume placeholder path (put your resume PDF in /public/resume.pdf)
   resumeUrl: "#resume-modal",
-  
-  // Avatar image: change to "/profile.jpg" after placing your picture in the public folder
   avatarUrl: "/avatar.svg",
 };
 
@@ -38,21 +38,21 @@ export const personalInfo = {
 export const statsData = [
   {
     id: 1,
-    number: "5+",
-    label: "Projects Completed",
-    description: "Hands-on AI, ML, and software applications built from concept to execution."
+    number: "9.28",
+    label: "B.Tech CGPA",
+    description: "Consistently high academic standing in Computer Science & Engineering at Bharati Vidyapeeth."
   },
   {
     id: 2,
-    number: "15+",
-    label: "Technologies Learned",
-    description: "Covering modern languages, deep learning frameworks, and engineering tools."
+    number: "5+",
+    label: "Projects Completed",
+    description: "Hands-on AI, ML, NLP, and software applications built from concept to execution."
   },
   {
     id: 3,
-    number: "Active",
-    label: "GitHub Contributions",
-    description: "Consistent coding, version control habits, and open-source explorations."
+    number: "200+",
+    label: "Students Mentored",
+    description: "Led and coordinated technical initiatives as CSE Co-Head & GFG Student Coordinator."
   }
 ];
 
@@ -63,45 +63,45 @@ export const skillsData = [
   {
     category: "Programming",
     icon: "FiCode",
-    description: "Core languages for algorithmic problem solving, software engineering, and data processing.",
+    description: "Core languages for software engineering, algorithmic problem solving, and database querying.",
     skills: [
+      { name: "Python", level: "Proficient", highlight: "NumPy, Pandas, Scikit-learn, Scripting" },
       { name: "Java", level: "Proficient", highlight: "Core Java, OOP, Collections" },
-      { name: "Python", level: "Proficient", highlight: "Data Science, PyTorch, Scripting" },
-      { name: "C/C++", level: "Intermediate", highlight: "Pointers, Memory, DSA" },
-      { name: "SQL", level: "Intermediate", highlight: "Relational Queries, Joins, Indexing" }
+      { name: "C", level: "Proficient", highlight: "Data Structures, Pointers, Algorithms" },
+      { name: "SQL", level: "Proficient", highlight: "Relational Queries, Joins, Indexing" }
+    ]
+  },
+  {
+    category: "Machine Learning & Data",
+    icon: "FiActivity",
+    description: "Applied machine learning, NLP spam detection, and analytical pipelines.",
+    skills: [
+      { name: "Scikit-learn", level: "Specialized", highlight: "Random Forest, Regression, Classification" },
+      { name: "NLP & TF-IDF", level: "Specialized", highlight: "Text Vectorization, NLTK, Precision Tuning" },
+      { name: "Pandas & NumPy", level: "Specialized", highlight: "Feature Engineering & Data Wrangling" },
+      { name: "Deep Learning", level: "Applied", highlight: "Neural Networks, Agricultural AI" }
+    ]
+  },
+  {
+    category: "Visualization & Tools",
+    icon: "FiTerminal",
+    description: "Interactive analytics dashboards, data visualization, and developer toolchains.",
+    skills: [
+      { name: "Streamlit", level: "Proficient", highlight: "Interactive ML Dashboards & Web UI" },
+      { name: "Matplotlib & Seaborn", level: "Proficient", highlight: "Heatmaps, Word Clouds, Timelines" },
+      { name: "Git & GitHub", level: "Proficient", highlight: "Branching, PRs, Version Control, CI/CD" },
+      { name: "Jupyter & VS Code", level: "Workflow", highlight: "Interactive EDA, Debugging, Linting" }
     ]
   },
   {
     category: "Core Computer Science",
     icon: "FiCpu",
-    description: "Fundamental principles powering scalable, reliable, and optimized computing systems.",
+    description: "Fundamental theoretical principles and system architectures.",
     skills: [
       { name: "Data Structures & Algorithms", level: "Core", highlight: "Arrays, Trees, Graphs, DP" },
-      { name: "Object-Oriented Programming", level: "Core", highlight: "Encapsulation, Polymorphism, Design" },
-      { name: "DBMS", level: "Core", highlight: "Relational Modeling, Normalization, ACID" },
-      { name: "Operating Systems", level: "Core", highlight: "Concurrency, Threads, Memory Mgmt" }
-    ]
-  },
-  {
-    category: "AI & Machine Learning",
-    icon: "FiActivity",
-    description: "Specialized focus in predictive modeling, deep architectures, and privacy-preserving AI.",
-    skills: [
-      { name: "Machine Learning", level: "Specialized", highlight: "Supervised & Unsupervised Learning" },
-      { name: "Deep Learning", level: "Specialized", highlight: "CNNs, RNNs, Backpropagation" },
-      { name: "Federated Learning", level: "Research", highlight: "Decentralized & Privacy-preserving ML" },
-      { name: "Neural Networks", level: "Specialized", highlight: "Model Optimization & Loss Functions" }
-    ]
-  },
-  {
-    category: "Tools & Environments",
-    icon: "FiTerminal",
-    description: "Modern development workflows, version management, and collaborative toolchains.",
-    skills: [
-      { name: "Git", level: "Proficient", highlight: "Branching, Merging, Git Flow" },
-      { name: "GitHub", level: "Proficient", highlight: "Repositories, Pull Requests, Actions" },
-      { name: "VS Code", level: "Primary IDE", highlight: "Extensions, Debugging, Linting" },
-      { name: "Jupyter Notebook", level: "Workflow", highlight: "Data Visualization & Experiments" }
+      { name: "DBMS", level: "NPTEL Certified", highlight: "IIT Kharagpur Certified, Normalization, ACID" },
+      { name: "Operating Systems", level: "Core", highlight: "Concurrency, Threads, Memory Mgmt" },
+      { name: "Computer Networks", level: "Core", highlight: "Protocols, Layered Models, Routing" }
     ]
   }
 ];
@@ -200,19 +200,47 @@ export const projectsData = [
 // ==============================================================================
 export const educationData = [
   {
-    degree: "Bachelor of Technology (B.Tech) in Engineering",
-    institution: "[Your College / University Name]", // PLACEHOLDER: e.g. ABC Institute of Technology
-    year: "[Graduation Year: e.g. 2026]",           // PLACEHOLDER: e.g. 2022 - 2026
-    cgpa: "[CGPA / Percentage: e.g. 8.5/10]",      // PLACEHOLDER: e.g. 8.5 CGPA
+    degree: "B.Tech in Computer Science and Engineering",
+    institution: "Bharati Vidyapeeth (Deemed to be University), Pune",
+    year: "2023 – 2027",
+    cgpa: "9.28 / 10",
     status: "Currently Pursuing",
-    summary: "Pursuing rigorous undergraduate coursework in engineering disciplines with dual emphasis on practical AI/ML software development and in-depth preparation for the GATE Examination in Computer Science & Information Technology / Data Science & AI.",
+    summary: "Pursuing Bachelor of Technology in Computer Science & Engineering with an outstanding CGPA of 9.28. Building practical AI/ML applications, participating in departmental leadership, and preparing for the GATE examination in Computer Science.",
     keyCoursework: [
       "Data Structures and Algorithms",
-      "Object-Oriented Programming (Java/C++)",
-      "Database Management Systems & SQL",
-      "Operating Systems & Computer Networks",
-      "Theory of Computation & Compiler Design",
-      "Machine Learning & Engineering Mathematics"
+      "Database Management Systems",
+      "Operating Systems",
+      "Computer Networks",
+      "Theory of Computation",
+      "Object-Oriented Programming (Java/C)"
+    ]
+  },
+  {
+    degree: "Class XII, Science",
+    institution: "Gyan Bharti Residential Complex",
+    year: "2022 – 2023",
+    cgpa: "79.4%",
+    status: "Completed",
+    summary: "Completed Higher Secondary Certificate in Science stream with strong foundations in Physics, Chemistry, and Mathematics.",
+    keyCoursework: [
+      "Mathematics",
+      "Physics",
+      "Chemistry",
+      "Computer Science Fundamentals"
+    ]
+  },
+  {
+    degree: "Class X",
+    institution: "Gyan Bharti Residential Complex",
+    year: "2020 – 2021",
+    cgpa: "94.6%",
+    status: "Completed",
+    summary: "Completed Secondary School Examination with exceptional academic distinction (94.6%).",
+    keyCoursework: [
+      "Mathematics",
+      "Science",
+      "Social Science",
+      "English"
     ]
   }
 ];
@@ -222,48 +250,57 @@ export const educationData = [
 // ==============================================================================
 export const achievementsData = [
   {
+    category: "Leadership & Experience",
+    title: "Co-Head, Department of Computer Science & Engineering",
+    subtitle: "BV(DU)COEP, Pune",
+    badge: "Leadership",
+    icon: "FiTrendingUp",
+    description: "Led and coordinated 5+ technical and non-technical initiatives involving more than 200 students while managing departmental events. Strengthened team coordination and leadership.",
+    date: "Sep 2024 – Sep 2025"
+  },
+  {
+    category: "Leadership & Community",
+    title: "Student Coordinator, GeeksforGeeks Student Chapter",
+    subtitle: "BV(DU)COEP GFG Student Chapter",
+    badge: "Coordination",
+    icon: "FiAward",
+    description: "Organized workshops and peer-learning sessions on programming, DSA, and problem-solving concepts. Guided students through collaborative learning activities to improve coding ability.",
+    date: "Nov 2023 – Sep 2024"
+  },
+  {
+    category: "Certifications",
+    title: "NPTEL Database Management Systems",
+    subtitle: "IIT Kharagpur (NPTEL Online Certification)",
+    badge: "IIT Certified",
+    icon: "FiCheckCircle",
+    description: "Successfully completed formal NPTEL certification in DBMS from IIT Kharagpur, demonstrating mastery of SQL, schema normalization, transaction management, and indexing.",
+    date: "Certified"
+  },
+  {
+    category: "Certifications",
+    title: "NPTEL Theory of Computation",
+    subtitle: "IIT Kanpur (NPTEL Online Certification)",
+    badge: "IIT Certified",
+    icon: "FiCheckCircle",
+    description: "Successfully completed formal NPTEL certification in Theory of Computation from IIT Kanpur, covering regular languages, context-free grammars, Turing machines, and decidability.",
+    date: "Certified"
+  },
+  {
     category: "National Examination",
     title: "GATE Examination Preparation",
     subtitle: "Graduate Aptitude Test in Engineering (CS / DA)",
     badge: "GATE Aspirant",
     icon: "FiBookOpen",
     description: "Actively preparing for the GATE examination with rigorous problem solving across core CS disciplines: Discrete Mathematics, Algorithms, OS, DBMS, Computer Networks, and Machine Learning.",
-    date: "[Target: 2026/2027]"
+    date: "Target: 2026/2027"
   },
   {
-    category: "Coding Achievements",
-    title: "Algorithmic Problem Solving",
-    subtitle: "[Competitive Programming Platform: LeetCode / HackerRank / CodeChef]",
-    badge: "Problem Solving",
-    icon: "FiAward",
-    description: "Consistent practice in Data Structures and Algorithms with solved problems across arrays, dynamic programming, trees, and graph algorithms.",
-    date: "[Active / Ongoing]"
-  },
-  {
-    category: "Certifications",
-    title: "AI & Machine Learning Specialization",
-    subtitle: "[Issuing Authority: Coursera / DeepLearning.AI / NPTEL / edX]",
-    badge: "Certified",
-    icon: "FiCheckCircle",
-    description: "Completed comprehensive certifications covering supervised learning, neural networks, and deep learning architectures with practical projects.",
-    date: "[Year: e.g. 2025]"
-  },
-  {
-    category: "Academic Achievements",
-    title: "Engineering Academic Excellence",
-    subtitle: "[College / Department Level]",
+    category: "Academic Excellence",
+    title: "Academic Distinction (CGPA: 9.28)",
+    subtitle: "Bharati Vidyapeeth (Deemed to be University), Pune",
     badge: "Academic",
-    icon: "FiBookOpen",
-    description: "Maintained consistent high academic standing in core engineering fundamentals, laboratory practicals, and collaborative coursework.",
-    date: "[Year: e.g. 2024 - 2026]"
-  },
-  {
-    category: "Hackathons & Competitions",
-    title: "Technical Hackathon Participant / Finalist",
-    subtitle: "[Hackathon Name / College Tech Fest]",
-    badge: "Innovation",
-    icon: "FiTrendingUp",
-    description: "Collaborated in multi-disciplinary teams to design prototype solutions addressing real-world problems in AI, healthcare, or sustainability.",
-    date: "[Year: e.g. 2025]"
+    icon: "FiAward",
+    description: "Consistently ranked at the top of the engineering cohort with a 9.28 CGPA in B.Tech Computer Science and Engineering.",
+    date: "2023 – Present"
   }
 ];

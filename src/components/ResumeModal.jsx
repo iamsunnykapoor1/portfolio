@@ -42,45 +42,49 @@ export default function ResumeModal({ isOpen, onClose }) {
           {/* Resume Summary Highlights Box */}
           <div className="bg-slate-950/70 border border-slate-800 rounded-2xl p-5 mb-6 space-y-3">
             <div className="flex justify-between items-center text-xs font-mono text-slate-400 pb-2 border-b border-slate-800">
-              <span>Target Role</span>
-              <span className="text-brand-cyan">Software Developer & AI/ML Engineer</span>
+              <span>Education</span>
+              <span className="text-brand-cyan text-right">B.Tech in CSE (CGPA: 9.28)</span>
             </div>
             <div className="flex justify-between items-center text-xs font-mono text-slate-400 pb-2 border-b border-slate-800">
-              <span>Competitive Focus</span>
-              <span className="text-emerald-400">GATE Aspirant (CS / DA)</span>
-            </div>
-            <div className="flex justify-between items-center text-xs font-mono text-slate-400 pb-2 border-b border-slate-800">
-              <span>Degree</span>
-              <span className="text-slate-200">B.Tech in Engineering</span>
+              <span>University</span>
+              <span className="text-slate-200 text-right">Bharati Vidyapeeth, Pune (2023–2027)</span>
             </div>
             <div className="flex justify-between items-center text-xs font-mono text-slate-400 pb-2 border-b border-slate-800">
               <span>Core Stack</span>
-              <span className="text-slate-200">Python, Java, Deep Learning, SQL</span>
+              <span className="text-emerald-400 text-right">Python, C, Java, SQL, Scikit-learn, NLP</span>
+            </div>
+            <div className="flex justify-between items-center text-xs font-mono text-slate-400 pb-2 border-b border-slate-800">
+              <span>Leadership</span>
+              <span className="text-slate-200 text-right">Co-Head CSE Dept & GFG Coordinator</span>
             </div>
             <div className="flex justify-between items-center text-xs font-mono text-slate-400">
-              <span>Featured Research</span>
-              <span className="text-indigo-300">FedSentry (Federated Learning)</span>
+              <span>Contact</span>
+              <span className="text-indigo-300 text-right">+91 7209383380 • Pune</span>
             </div>
           </div>
-
-          {/* User instructions note */}
-          <p className="text-xs text-slate-400 mb-6 bg-slate-800/50 p-3 rounded-xl border border-slate-700/50 leading-relaxed">
-            💡 <strong className="text-slate-200">Quick Note:</strong> To link your official PDF resume, simply place your PDF file in the <code className="text-brand-cyan font-mono">public/resume.pdf</code> folder of this project.
-          </p>
 
           {/* Actions */}
           <div className="flex flex-col sm:flex-row gap-3">
             <a
               href={`${import.meta.env.BASE_URL}resume.pdf`}
-              download={`${personalInfo.name}_Resume.pdf`}
-              className="flex-1 inline-flex items-center justify-center gap-2 py-3 px-5 rounded-xl bg-gradient-to-r from-brand-indigo to-brand-purple hover:from-indigo-500 hover:to-purple-500 text-white font-semibold text-sm shadow-lg shadow-indigo-600/30 transition-all"
+              download="Sunny_Kapoor_Resume.pdf"
+              className="flex-1 inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-gradient-to-r from-brand-indigo to-brand-purple hover:from-indigo-500 hover:to-purple-500 text-white font-semibold text-sm shadow-lg shadow-indigo-600/30 transition-all"
             >
               <FiDownload size={16} />
-              <span>Download PDF Resume</span>
+              <span>Download PDF</span>
+            </a>
+            <a
+              href={`${import.meta.env.BASE_URL}resume.pdf`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-brand-cyan text-sm font-semibold border border-slate-700 hover:border-slate-600 transition-colors"
+            >
+              <FiExternalLink size={16} />
+              <span>View PDF</span>
             </a>
             <button
               onClick={onClose}
-              className="py-3 px-5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 text-sm font-semibold transition-colors"
+              className="py-3 px-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 text-sm font-semibold transition-colors"
             >
               Close
             </button>
