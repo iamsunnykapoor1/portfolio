@@ -111,6 +111,64 @@ export const skillsData = [
 // ==============================================================================
 export const projectsData = [
   {
+    id: "ai-energy-optimizer",
+    title: "AI Energy Optimizer",
+    category: "AI, IoT & Smart Grid Optimization",
+    badge: "Smart Energy AI",
+    featured: true,
+    description: "An end-to-end intelligent energy management platform combining real-time IoT sensor telemetry, live weather integration, and machine learning to simulate, predict, and optimize commercial power consumption.",
+    detailedInfo: "AI Energy Optimizer simulates retail power consumption patterns and optimizes commercial energy efficiency. It integrates live IoT sensor telemetry (occupancy and power draw streamed every 5 seconds) with real-time weather data from OpenWeatherMap. Powered by a Random Forest regression pipeline and a Flask REST API, it serves predictive load forecasts and cost-saving recommendations through a high-performance Streamlit analytics dashboard.",
+    technologies: [
+      "Python",
+      "Streamlit",
+      "Flask REST API",
+      "Random Forest",
+      "Scikit-Learn",
+      "IoT Sensor Feed",
+      "Pandas & NumPy",
+      "OpenWeatherMap API"
+    ],
+    githubUrl: "https://github.com/iamsunnykapoor1/AI-Energy-Optimizer",
+    liveUrl: "https://github.com/iamsunnykapoor1/AI-Energy-Optimizer#quick-start-windows-powershell",
+    highlights: [
+      "Live Streamlit analytics dashboard with real-time telemetry and automated energy-saving recommendations",
+      "Flask REST backend serving /predict, /sensor_update, and /current_status endpoints",
+      "Random Forest regression trained on retail power datasets for predictive load forecasting",
+      "Climate-aware optimization integrating OpenWeatherMap API for adaptive HVAC management"
+    ],
+    accentColor: "emerald"
+  },
+  {
+    id: "fertilizer-recommendation",
+    title: "Deep Learning-Based Fertilizer Recommendation for Sustainable Crop Production",
+    category: "Deep Learning & Agritech",
+    badge: "Sustainable AI",
+    featured: true,
+    description: "A Deep Learning project that uses soil data and crop information to recommend suitable fertilizers for sustainable agriculture.",
+    workflow: [
+      { step: "Soil Data & Crop Type", desc: "NPK nutrients, pH levels, moisture, and target crop selection" },
+      { step: "Deep Learning Model", desc: "Feature representation, hidden layers, and pattern recognition" },
+      { step: "Fertilizer Recommendation", desc: "Optimized chemical/organic fertilizer composition for maximal yield" }
+    ],
+    detailedInfo: "Agriculture accounts for massive global resource consumption. This deep learning system analyzes soil mineral balances (Nitrogen, Phosphorus, Potassium), moisture, temperature, and specific crop requirements to recommend precise, sustainable fertilizer dosages—preventing soil degradation and promoting ecological farming.",
+    technologies: [
+      "Python",
+      "Deep Learning",
+      "Machine Learning",
+      "Data Analysis",
+      "NumPy/Pandas",
+      "Neural Networks"
+    ],
+    githubUrl: "https://github.com/iamsunnykapoor1/deep_learning_pbl",
+    liveUrl: "https://crop-fertilizer-ai.placeholder.app",                      // REPLACE with your live demo or leave empty
+    highlights: [
+      "End-to-end predictive pipeline: Soil Data + Crop Type → DL Model → Fertilizer Recommendation",
+      "Reduces excess fertilizer runoff and improves sustainable agricultural yields",
+      "Extensive data preprocessing and evaluation on diverse multi-feature soil datasets"
+    ],
+    accentColor: "cyan"
+  },
+  {
     id: "fedsentry",
     title: "FedSentry",
     category: "AI & Decentralized Machine Learning",
@@ -134,36 +192,6 @@ export const projectsData = [
       "Engineered with clean Python modules and version controlled via Git/GitHub"
     ],
     accentColor: "indigo"
-  },
-  {
-    id: "fertilizer-recommendation",
-    title: "Deep Learning-Based Fertilizer Recommendation for Sustainable Crop Production",
-    category: "Deep Learning & Agritech",
-    badge: "Sustainable AI",
-    featured: true,
-    description: "A Deep Learning project that uses soil data and crop information to recommend suitable fertilizers for sustainable agriculture.",
-    workflow: [
-      { step: "Soil Data & Crop Type", desc: "NPK nutrients, pH levels, moisture, and target crop selection" },
-      { step: "Deep Learning Model", desc: "Feature representation, hidden layers, and pattern recognition" },
-      { step: "Fertilizer Recommendation", desc: "Optimized chemical/organic fertilizer composition for maximal yield" }
-    ],
-    detailedInfo: "Agriculture accounts for massive global resource consumption. This deep learning system analyzes soil mineral balances (Nitrogen, Phosphorus, Potassium), moisture, temperature, and specific crop requirements to recommend precise, sustainable fertilizer dosages—preventing soil degradation and promoting ecological farming.",
-    technologies: [
-      "Python",
-      "Deep Learning",
-      "Machine Learning",
-      "Data Analysis",
-      "NumPy/Pandas",
-      "Neural Networks"
-    ],
-    githubUrl: "https://github.com/your-username/fertilizer-recommendation-dl", // REPLACE with your repository link
-    liveUrl: "https://crop-fertilizer-ai.placeholder.app",                      // REPLACE with your live demo or leave empty
-    highlights: [
-      "End-to-end predictive pipeline: Soil Data + Crop Type → DL Model → Fertilizer Recommendation",
-      "Reduces excess fertilizer runoff and improves sustainable agricultural yields",
-      "Extensive data preprocessing and evaluation on diverse multi-feature soil datasets"
-    ],
-    accentColor: "cyan"
   }
 ];
 

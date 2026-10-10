@@ -10,7 +10,9 @@ import {
   FiCheck, 
   FiArrowRight,
   FiInfo,
-  FiX
+  FiX,
+  FiZap,
+  FiActivity
 } from 'react-icons/fi';
 import { projectsData } from '../data/portfolioData';
 
@@ -19,7 +21,7 @@ export default function Projects() {
 
   return (
     <section id="projects" className="py-24 px-4 sm:px-6 lg:px-8 relative z-10">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
           <motion.div
@@ -50,7 +52,7 @@ export default function Projects() {
             transition={{ duration: 0.6, delay: 0.15 }}
             className="text-slate-400 text-sm sm:text-base max-w-xl mx-auto mt-3"
           >
-            Practical engineering projects exploring privacy-first machine learning, neural architectures, and real-world impact.
+            Practical engineering projects exploring IoT telemetry, predictive AI optimization, and real-world impact.
           </motion.p>
 
           <motion.div
@@ -63,14 +65,14 @@ export default function Projects() {
         </div>
 
         {/* Project Cards Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projectsData.map((project, index) => (
             <motion.div
               key={project.id}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.7, delay: index * 0.2 }}
+              transition={{ duration: 0.7, delay: index * 0.15 }}
               whileHover={{ y: -8 }}
               className="glass-card rounded-3xl border border-slate-800/90 hover:border-brand-indigo/50 transition-all duration-500 overflow-hidden flex flex-col justify-between group shadow-xl hover:shadow-2xl hover:shadow-indigo-500/10"
             >
@@ -79,7 +81,11 @@ export default function Projects() {
                 {/* Ambient glow accent */}
                 <div 
                   className={`absolute -top-12 -right-12 w-44 h-44 rounded-full blur-3xl opacity-30 pointer-events-none ${
-                    project.accentColor === 'cyan' ? 'bg-cyan-500' : 'bg-indigo-500'
+                    project.accentColor === 'cyan'
+                      ? 'bg-cyan-500'
+                      : project.accentColor === 'emerald'
+                      ? 'bg-emerald-500'
+                      : 'bg-indigo-500'
                   }`}
                 />
 
@@ -95,55 +101,87 @@ export default function Projects() {
 
                 {/* Card Center Visual Art / Architecture Flow */}
                 <div className="relative z-10 my-auto py-2">
-                  {project.workflow ? (
+                  {project.id === 'fertilizer-recommendation' ? (
                     /* Specific Pipeline Diagram for Crop Fertilizer DL Project */
                     <div className="bg-slate-900/90 border border-slate-800 rounded-xl p-3 shadow-inner">
                       <p className="text-[10px] font-mono text-slate-400 uppercase tracking-wider mb-2 text-center">
                         Prediction Pipeline Workflow
                       </p>
                       <div className="flex items-center justify-between gap-1 sm:gap-2 text-center">
-                        <div className="flex-1 p-2 rounded-lg bg-slate-800/80 border border-slate-700/60">
+                        <div className="flex-1 p-1.5 sm:p-2 rounded-lg bg-slate-800/80 border border-slate-700/60">
                           <p className="text-[11px] font-semibold text-brand-cyan leading-tight">
-                            Soil Data + Crop Type
+                            Soil & Crop
                           </p>
-                          <p className="text-[9px] text-slate-400 mt-0.5">NPK, pH & moisture</p>
+                          <p className="text-[9px] text-slate-400 mt-0.5">NPK & pH</p>
                         </div>
-                        <FiArrowRight className="text-brand-indigo shrink-0 text-xs sm:text-sm animate-pulse" />
-                        <div className="flex-1 p-2 rounded-lg bg-indigo-950/60 border border-indigo-700/50">
+                        <FiArrowRight className="text-brand-indigo shrink-0 text-xs animate-pulse" />
+                        <div className="flex-1 p-1.5 sm:p-2 rounded-lg bg-indigo-950/60 border border-indigo-700/50">
                           <p className="text-[11px] font-semibold text-indigo-300 leading-tight">
                             DL Model
                           </p>
-                          <p className="text-[9px] text-slate-400 mt-0.5">Pattern Engine</p>
+                          <p className="text-[9px] text-slate-400 mt-0.5">Pattern NN</p>
                         </div>
-                        <FiArrowRight className="text-brand-purple shrink-0 text-xs sm:text-sm animate-pulse" />
-                        <div className="flex-1 p-2 rounded-lg bg-emerald-950/60 border border-emerald-700/50">
+                        <FiArrowRight className="text-brand-purple shrink-0 text-xs animate-pulse" />
+                        <div className="flex-1 p-1.5 sm:p-2 rounded-lg bg-emerald-950/60 border border-emerald-700/50">
                           <p className="text-[11px] font-semibold text-emerald-300 leading-tight">
-                            Fertilizer Rec
+                            Optimal Rec
                           </p>
-                          <p className="text-[9px] text-slate-400 mt-0.5">Optimal Dosage</p>
+                          <p className="text-[9px] text-slate-400 mt-0.5">Dosage</p>
+                        </div>
+                      </div>
+                    </div>
+                  ) : project.id === 'ai-energy-optimizer' ? (
+                    /* Specific Optimization Visual for AI Energy Optimizer */
+                    <div className="bg-slate-900/90 border border-slate-800 rounded-xl p-3 shadow-inner">
+                      <p className="text-[10px] font-mono text-slate-400 uppercase tracking-wider mb-2 text-center">
+                        Optimization Architecture
+                      </p>
+                      <div className="flex items-center justify-between gap-1 sm:gap-2 text-center">
+                        <div className="flex-1 p-1.5 sm:p-2 rounded-lg bg-slate-800/80 border border-slate-700/60">
+                          <p className="text-[11px] font-semibold text-amber-400 leading-tight flex items-center justify-center gap-1">
+                            <FiZap size={11} className="shrink-0" />
+                            <span className="truncate">IoT & API</span>
+                          </p>
+                          <p className="text-[9px] text-slate-400 mt-0.5 truncate">kW & Weather</p>
+                        </div>
+                        <FiArrowRight className="text-amber-500 shrink-0 text-xs animate-pulse" />
+                        <div className="flex-1 p-1.5 sm:p-2 rounded-lg bg-emerald-950/60 border border-emerald-700/50">
+                          <p className="text-[11px] font-semibold text-emerald-300 leading-tight flex items-center justify-center gap-1">
+                            <FiCpu size={11} className="shrink-0" />
+                            <span className="truncate">RF Model</span>
+                          </p>
+                          <p className="text-[9px] text-slate-400 mt-0.5 truncate">Flask REST</p>
+                        </div>
+                        <FiArrowRight className="text-emerald-500 shrink-0 text-xs animate-pulse" />
+                        <div className="flex-1 p-1.5 sm:p-2 rounded-lg bg-cyan-950/60 border border-cyan-700/50">
+                          <p className="text-[11px] font-semibold text-cyan-300 leading-tight flex items-center justify-center gap-1">
+                            <FiActivity size={11} className="shrink-0" />
+                            <span className="truncate">Streamlit</span>
+                          </p>
+                          <p className="text-[9px] text-slate-400 mt-0.5 truncate">Analytics</p>
                         </div>
                       </div>
                     </div>
                   ) : (
                     /* Specific Decentralized Network Visual for FedSentry */
-                    <div className="bg-slate-900/90 border border-slate-800 rounded-xl p-4 shadow-inner text-center">
-                      <div className="flex items-center justify-center gap-4 text-xs font-mono">
-                        <div className="p-2.5 rounded-lg bg-slate-800/90 border border-slate-700 text-slate-300 flex items-center gap-1.5">
-                          <FiDatabase size={14} className="text-brand-cyan" />
-                          <span>Local Nodes</span>
+                    <div className="bg-slate-900/90 border border-slate-800 rounded-xl p-3 shadow-inner text-center">
+                      <div className="flex items-center justify-center gap-2 sm:gap-3 text-xs font-mono">
+                        <div className="p-2 rounded-lg bg-slate-800/90 border border-slate-700 text-slate-300 flex items-center gap-1">
+                          <FiDatabase size={13} className="text-brand-cyan shrink-0" />
+                          <span className="text-[11px]">Nodes</span>
                         </div>
-                        <span className="text-brand-indigo font-bold">⇄</span>
-                        <div className="p-2.5 rounded-lg bg-indigo-950/70 border border-indigo-700/60 text-indigo-200 flex items-center gap-1.5 shadow-sm">
-                          <FiShield size={14} className="text-brand-purple" />
-                          <span>FedSentry Core</span>
+                        <span className="text-brand-indigo font-bold text-xs">⇄</span>
+                        <div className="p-2 rounded-lg bg-indigo-950/70 border border-indigo-700/60 text-indigo-200 flex items-center gap-1 shadow-sm">
+                          <FiShield size={13} className="text-brand-purple shrink-0" />
+                          <span className="text-[11px]">Core</span>
                         </div>
-                        <span className="text-brand-purple font-bold">⇄</span>
-                        <div className="p-2.5 rounded-lg bg-slate-800/90 border border-slate-700 text-slate-300 flex items-center gap-1.5">
-                          <FiCpu size={14} className="text-emerald-400" />
-                          <span>Global Model</span>
+                        <span className="text-brand-purple font-bold text-xs">⇄</span>
+                        <div className="p-2 rounded-lg bg-slate-800/90 border border-slate-700 text-slate-300 flex items-center gap-1">
+                          <FiCpu size={13} className="text-emerald-400 shrink-0" />
+                          <span className="text-[11px]">Global</span>
                         </div>
                       </div>
-                      <p className="text-[10px] text-slate-400 mt-2 font-mono">
+                      <p className="text-[9px] text-slate-400 mt-2 font-mono">
                         Collaborative Intelligence without raw data exchange
                       </p>
                     </div>
