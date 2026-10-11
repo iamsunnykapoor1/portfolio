@@ -139,6 +139,86 @@ export const projectsData = [
     accentColor: "emerald"
   },
   {
+    id: "fedsentry",
+    title: "FedSentry",
+    category: "AI & Decentralized Machine Learning",
+    badge: "Federated Learning",
+    featured: true,
+    description: "A project based on Federated Learning that focuses on collaborative machine learning while keeping data decentralized and improving privacy.",
+    detailedInfo: "FedSentry enables multiple participating client nodes to iteratively train a robust global model without transmitting raw local sensitive data to a centralized server. It uses secure gradient aggregation protocols, mitigating data leakage and ensuring strict regulatory privacy compliance in collaborative intelligence networks.",
+    technologies: [
+      "Python",
+      "Federated Learning",
+      "Machine Learning",
+      "Git/GitHub",
+      "Privacy-Preserving AI",
+      "Distributed Systems"
+    ],
+    githubUrl: "https://github.com/iamsunnykapoor1/fedsentry",
+    liveUrl: "https://github.com/iamsunnykapoor1/fedsentry",
+    highlights: [
+      "Decentralized collaborative training preserving client data privacy",
+      "Mitigates single-point-of-failure and raw data transmission vulnerabilities",
+      "Engineered with clean Python modules and version controlled via Git/GitHub"
+    ],
+    accentColor: "indigo"
+  },
+  {
+    id: "whatsapp-chat-analyzer",
+    title: "WhatsApp Chat Analyzer",
+    category: "NLP & Data Analytics",
+    badge: "Chat Analytics",
+    featured: true,
+    description: "An interactive NLP and data analytics application that parses exported WhatsApp chats to extract communication patterns, word frequency distributions, activity heatmaps, and user interaction metrics.",
+    detailedInfo: "WhatsApp Chat Analyzer processes exported 24-hour and 12-hour group and individual chat exports. Using regular expressions and specialized preprocessing pipelines, it transforms unstructured raw chat text into structured Pandas DataFrames. It delivers comprehensive statistics (message counts, word volume, media shared, and links extracted via URLExtract), timeline distributions, activity heatmaps, and visual word clouds with Hinglish and English stop-word filtering.",
+    technologies: [
+      "Python",
+      "Streamlit",
+      "Pandas",
+      "Matplotlib & Seaborn",
+      "WordCloud",
+      "NLTK",
+      "URLExtract",
+      "Regex"
+    ],
+    githubUrl: "https://github.com/iamsunnykapoor1/project_whatapps_chat_analyzer",
+    liveUrl: "https://github.com/iamsunnykapoor1/project_whatapps_chat_analyzer",
+    highlights: [
+      "Interactive Streamlit web dashboard providing both overall group and individual user-level insights",
+      "Regex-powered preprocessor transforming unstructured WhatsApp chat exports into structured DataFrames",
+      "Comprehensive metrics: total messages, word count, media attachments, and URLs extracted via URLExtract",
+      "Dynamic word clouds and frequency distribution charts with custom Hinglish stop-word filtering"
+    ],
+    accentColor: "teal"
+  },
+  {
+    id: "sms-spam-classifier",
+    title: "SMS & Email Spam Classifier",
+    category: "Machine Learning & NLP",
+    badge: "NLP Spam Detection",
+    featured: true,
+    description: "A machine learning-based NLP web application that classifies SMS and email messages as spam or not spam using TF-IDF vectorization and Multinomial Naive Bayes.",
+    detailedInfo: "Built with Scikit-learn, NLTK, and Streamlit, this spam detection system preprocesses raw text through tokenization, lowercasing, special character removal, stop-word filtering, and Porter stemming. The text is vectorized using TF-IDF and classified with high precision using a trained Multinomial Naive Bayes model to safeguard communication channels against fraudulent content.",
+    technologies: [
+      "Python",
+      "Scikit-Learn",
+      "NLTK",
+      "Streamlit",
+      "TF-IDF Vectorizer",
+      "Multinomial Naive Bayes",
+      "Pandas & NumPy"
+    ],
+    githubUrl: "https://github.com/iamsunnykapoor1/sms_spam_classifier_pycharm",
+    liveUrl: "https://github.com/iamsunnykapoor1/sms_spam_classifier_pycharm",
+    highlights: [
+      "Multinomial Naive Bayes classification model optimized for high precision spam detection",
+      "End-to-end NLP preprocessing: tokenization, punctuation removal, stop-word removal, and Porter stemming",
+      "TF-IDF text vectorization converting unstructured messages into numerical feature vectors",
+      "Real-time Streamlit web interface delivering instantaneous message classification"
+    ],
+    accentColor: "purple"
+  },
+  {
     id: "fertilizer-recommendation",
     title: "Deep Learning-Based Fertilizer Recommendation for Sustainable Crop Production",
     category: "Deep Learning & Agritech",
@@ -160,38 +240,13 @@ export const projectsData = [
       "Neural Networks"
     ],
     githubUrl: "https://github.com/iamsunnykapoor1/deep_learning_pbl",
-    liveUrl: "https://crop-fertilizer-ai.placeholder.app",                      // REPLACE with your live demo or leave empty
+    liveUrl: "https://github.com/iamsunnykapoor1/deep_learning_pbl",
     highlights: [
       "End-to-end predictive pipeline: Soil Data + Crop Type → DL Model → Fertilizer Recommendation",
       "Reduces excess fertilizer runoff and improves sustainable agricultural yields",
       "Extensive data preprocessing and evaluation on diverse multi-feature soil datasets"
     ],
     accentColor: "cyan"
-  },
-  {
-    id: "fedsentry",
-    title: "FedSentry",
-    category: "AI & Decentralized Machine Learning",
-    badge: "Federated Learning",
-    featured: true,
-    description: "A project based on Federated Learning that focuses on collaborative machine learning while keeping data decentralized and improving privacy.",
-    detailedInfo: "FedSentry enables multiple participating client nodes to iteratively train a robust global model without transmitting raw local sensitive data to a centralized server. It uses secure gradient aggregation protocols, mitigating data leakage and ensuring strict regulatory privacy compliance in collaborative intelligence networks.",
-    technologies: [
-      "Python",
-      "Federated Learning",
-      "Machine Learning",
-      "Git/GitHub",
-      "Privacy-Preserving AI",
-      "Distributed Systems"
-    ],
-    githubUrl: "https://github.com/your-username/fedsentry", // REPLACE with your repository link
-    liveUrl: "https://fedsentry-demo.placeholder.app",       // REPLACE with your live demo or leave empty
-    highlights: [
-      "Decentralized collaborative training preserving client data privacy",
-      "Mitigates single-point-of-failure and raw data transmission vulnerabilities",
-      "Engineered with clean Python modules and version controlled via Git/GitHub"
-    ],
-    accentColor: "indigo"
   }
 ];
 

@@ -12,7 +12,10 @@ import {
   FiInfo,
   FiX,
   FiZap,
-  FiActivity
+  FiActivity,
+  FiMessageSquare,
+  FiBarChart2,
+  FiMail
 } from 'react-icons/fi';
 import { projectsData } from '../data/portfolioData';
 
@@ -85,6 +88,10 @@ export default function Projects() {
                       ? 'bg-cyan-500'
                       : project.accentColor === 'emerald'
                       ? 'bg-emerald-500'
+                      : project.accentColor === 'teal'
+                      ? 'bg-teal-500'
+                      : project.accentColor === 'purple'
+                      ? 'bg-purple-500'
                       : 'bg-indigo-500'
                   }`}
                 />
@@ -159,6 +166,70 @@ export default function Projects() {
                             <span className="truncate">Streamlit</span>
                           </p>
                           <p className="text-[9px] text-slate-400 mt-0.5 truncate">Analytics</p>
+                        </div>
+                      </div>
+                    </div>
+                  ) : project.id === 'whatsapp-chat-analyzer' ? (
+                    /* Specific Analytics Flow for WhatsApp Chat Analyzer */
+                    <div className="bg-slate-900/90 border border-slate-800 rounded-xl p-3 shadow-inner">
+                      <p className="text-[10px] font-mono text-slate-400 uppercase tracking-wider mb-2 text-center">
+                        Chat Analytics Pipeline
+                      </p>
+                      <div className="flex items-center justify-between gap-1 sm:gap-2 text-center">
+                        <div className="flex-1 p-1.5 sm:p-2 rounded-lg bg-slate-800/80 border border-slate-700/60">
+                          <p className="text-[11px] font-semibold text-emerald-400 leading-tight flex items-center justify-center gap-1">
+                            <FiMessageSquare size={11} className="shrink-0" />
+                            <span className="truncate">Raw Chat</span>
+                          </p>
+                          <p className="text-[9px] text-slate-400 mt-0.5 truncate">Export .txt</p>
+                        </div>
+                        <FiArrowRight className="text-emerald-500 shrink-0 text-xs animate-pulse" />
+                        <div className="flex-1 p-1.5 sm:p-2 rounded-lg bg-teal-950/60 border border-teal-700/50">
+                          <p className="text-[11px] font-semibold text-teal-300 leading-tight flex items-center justify-center gap-1">
+                            <FiCpu size={11} className="shrink-0" />
+                            <span className="truncate">NLP / Regex</span>
+                          </p>
+                          <p className="text-[9px] text-slate-400 mt-0.5 truncate">Pandas DF</p>
+                        </div>
+                        <FiArrowRight className="text-teal-500 shrink-0 text-xs animate-pulse" />
+                        <div className="flex-1 p-1.5 sm:p-2 rounded-lg bg-cyan-950/60 border border-cyan-700/50">
+                          <p className="text-[11px] font-semibold text-cyan-300 leading-tight flex items-center justify-center gap-1">
+                            <FiBarChart2 size={11} className="shrink-0" />
+                            <span className="truncate">Streamlit</span>
+                          </p>
+                          <p className="text-[9px] text-slate-400 mt-0.5 truncate">Heatmaps & Cloud</p>
+                        </div>
+                      </div>
+                    </div>
+                  ) : project.id === 'sms-spam-classifier' ? (
+                    /* Specific NLP Pipeline for SMS Spam Classifier */
+                    <div className="bg-slate-900/90 border border-slate-800 rounded-xl p-3 shadow-inner">
+                      <p className="text-[10px] font-mono text-slate-400 uppercase tracking-wider mb-2 text-center">
+                        Spam Detection Architecture
+                      </p>
+                      <div className="flex items-center justify-between gap-1 sm:gap-2 text-center">
+                        <div className="flex-1 p-1.5 sm:p-2 rounded-lg bg-slate-800/80 border border-slate-700/60">
+                          <p className="text-[11px] font-semibold text-purple-400 leading-tight flex items-center justify-center gap-1">
+                            <FiMail size={11} className="shrink-0" />
+                            <span className="truncate">Message</span>
+                          </p>
+                          <p className="text-[9px] text-slate-400 mt-0.5 truncate">SMS / Email</p>
+                        </div>
+                        <FiArrowRight className="text-purple-500 shrink-0 text-xs animate-pulse" />
+                        <div className="flex-1 p-1.5 sm:p-2 rounded-lg bg-indigo-950/60 border border-indigo-700/50">
+                          <p className="text-[11px] font-semibold text-indigo-300 leading-tight flex items-center justify-center gap-1">
+                            <FiCpu size={11} className="shrink-0" />
+                            <span className="truncate">TF-IDF</span>
+                          </p>
+                          <p className="text-[9px] text-slate-400 mt-0.5 truncate">NLTK Tokenize</p>
+                        </div>
+                        <FiArrowRight className="text-indigo-500 shrink-0 text-xs animate-pulse" />
+                        <div className="flex-1 p-1.5 sm:p-2 rounded-lg bg-pink-950/60 border border-pink-700/50">
+                          <p className="text-[11px] font-semibold text-pink-300 leading-tight flex items-center justify-center gap-1">
+                            <FiShield size={11} className="shrink-0" />
+                            <span className="truncate">Naive Bayes</span>
+                          </p>
+                          <p className="text-[9px] text-slate-400 mt-0.5 truncate">Spam vs Ham</p>
                         </div>
                       </div>
                     </div>
