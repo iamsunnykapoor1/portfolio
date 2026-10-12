@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FiMenu, FiX, FiFileText, FiDownload, FiExternalLink } from 'react-icons/fi';
+import { FiMenu, FiX, FiFileText } from 'react-icons/fi';
 import { personalInfo } from '../data/portfolioData';
 
 const navLinks = [
@@ -18,164 +18,133 @@ export default function Navbar({ onOpenResume }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
 
-  // Track scroll position for navbar styling and active section highlighting
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-
-      const sections = navLinks.map(link => link.href.substring(1));
-      const scrollPosition = window.scrollY + 200;
-
-      for (const sectionId of sections) {
-        const el = document.getElementById(sectionId);
-        if (el) {
-          const top = el.offsetTop;
-          const height = el.offsetHeight;
-          if (scrollPosition >= top && scrollPosition < top + height) {
-            setActiveSection(sectionId);
-            break;
-          }
+      setIsScrolled(window.scrollY > 24);
+      const scrollPosition = window.scrollY + 180;
+      for (const link of navLinks) {
+        const section = document.getElementById(link.href.slice(1));
+        if (section && scrollPosition >= section.offsetTop && scrollPosition < section.offsetTop + section.offsetHeight) {
+          setActiveSection(link.href.slice(1));
+          break;
         }
       }
     };
 
+    handleScroll();
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleNavClick = (e, href) => {
-    e.preventDefault();
+  const handleNavClick = (event, href) => {
+    event.preventDefault();
     setMobileMenuOpen(false);
-    const target = document.querySelector(href);
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth' });
-    }
+    document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const openResume = () => {
+    setMobileMenuOpen(false);
+    onOpenResume();
   };
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'py-3 bg-[#07090e]/85 backdrop-blur-md border-b border-slate-800/80 shadow-lg shadow-black/30'
-          : 'py-5 bg-transparent'
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between">
-          {/* Brand Logo */}
-          <a
-            href="#home"
-            onClick={(e) => handleNavClick(e, '#home')}
-            className="group flex items-center gap-2 focus:outline-none"
+    <header className={`fixed inset-x-0 top-0 z-50 border-b transition-all duration-300 ${
+      isScrolled
+        ? 'border-white/[0.08] bg-[#0a0908]/95 py-3 backdrop-blur-xl'
+        : 'border-transparent bg-transparent py-5'
+    }`}>
+      <div className="mx-auto flex max-w-[1440px] items-center justify-between gap-5 px-5 sm:px-8 lg:px-12">
+        <a
+          href="#home"
+          onClick={(event) => handleNavClick(event, '#home')}
+          className="group flex shrink-0 items-center gap-3"
+          aria-label={`${personalInfo.name}, home`}
+        >
+          <span className="flex h-9 w-9 items-center justify-center border border-[#c5a770]/45 font-heading text-sm font-semibold tracking-wide text-[#dec797] transition-colors group-hover:border-[#dec797]">
+            SK
+          </span>
+          <span className="font-heading text-base font-semibold tracking-[0.02em] text-[#f4f0e7] transition-colors group-hover:text-[#dec797] sm:text-lg">
+            {personalInfo.name}
+          </span>
+        </a>
+
+        <nav aria-label="Main navigation" className="hidden items-center gap-3 lg:flex xl:gap-5">
+          {navLinks.map((link) => {
+            const isActive = activeSection === link.href.slice(1);
+            return (
+              <a
+                key={link.name}
+                href={link.href}
+                onClick={(event) => handleNavClick(event, link.href)}
+                aria-current={isActive ? 'location' : undefined}
+                className={`group relative py-2 text-[11px] font-medium uppercase tracking-[0.13em] transition-colors ${
+                  isActive ? 'text-[#dec797]' : 'text-[#aaa69d] hover:text-[#f4f0e7]'
+                }`}
+              >
+                {link.name}
+                <span className={`absolute inset-x-0 bottom-0 h-px origin-left bg-[#c5a770] transition-transform duration-200 ${
+                  isActive ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
+                }`} />
+              </a>
+            );
+          })}
+        </nav>
+
+        <div className="flex shrink-0 items-center gap-3">
+          <button
+            onClick={openResume}
+            className="hidden items-center gap-2 border border-[#c5a770]/60 bg-[#c5a770] px-4 py-2.5 text-xs font-semibold uppercase tracking-[0.12em] text-[#14120e] transition-colors hover:border-[#dec797] hover:bg-[#dec797] sm:inline-flex"
           >
-            <div className="relative flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-blue/20 via-brand-indigo/30 to-brand-purple/20 border border-brand-indigo/40 group-hover:border-brand-cyan transition-colors">
-              <span className="font-heading font-extrabold text-xl text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan to-brand-indigo">
-                S
-              </span>
-              <div className="absolute -inset-0.5 rounded-xl bg-gradient-to-r from-cyan-500 to-purple-600 opacity-0 group-hover:opacity-30 blur transition-opacity" />
-            </div>
-            <div className="flex items-baseline">
-              <span className="text-xl font-bold font-heading tracking-tight text-white group-hover:text-brand-cyan transition-colors">
-                {personalInfo.name}
-              </span>
-              <span className="w-1.5 h-1.5 ml-1 rounded-full bg-brand-cyan animate-pulse" />
-            </div>
-          </a>
-
-          {/* Desktop Navigation Links */}
-          <nav className="hidden md:flex items-center gap-1 bg-slate-900/60 p-1.5 rounded-full border border-slate-800/80 backdrop-blur-md">
-            {navLinks.map((link) => {
-              const isActive = activeSection === link.href.substring(1);
-              return (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  onClick={(e) => handleNavClick(e, link.href)}
-                  className={`relative px-4 py-1.5 text-sm font-medium transition-colors rounded-full ${
-                    isActive
-                      ? 'text-white'
-                      : 'text-slate-400 hover:text-slate-100 hover:bg-slate-800/40'
-                  }`}
-                >
-                  {isActive && (
-                    <motion.div
-                      layoutId="activeNavIndicator"
-                      className="absolute inset-0 bg-gradient-to-r from-brand-indigo/80 to-brand-purple/80 rounded-full -z-10 shadow-sm shadow-indigo-500/30"
-                      transition={{ type: 'spring', stiffness: 380, damping: 30 }}
-                    />
-                  )}
-                  {link.name}
-                </a>
-              );
-            })}
-          </nav>
-
-          {/* Right Action Button (Resume) & Hamburger */}
-          <div className="flex items-center gap-3">
-            {/* Resume Button */}
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={onOpenResume}
-              className="hidden sm:inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-slate-100 bg-gradient-to-r from-slate-800 to-slate-900 hover:from-brand-indigo/20 hover:to-brand-purple/20 border border-slate-700 hover:border-brand-indigo/60 rounded-xl transition-all shadow-sm group"
-            >
-              <FiFileText className="text-brand-cyan group-hover:rotate-12 transition-transform" />
-              <span>Resume</span>
-            </motion.button>
-
-            {/* Mobile Hamburger Button */}
-            <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-2.5 rounded-xl bg-slate-900/80 border border-slate-800 text-slate-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-brand-indigo"
-              aria-label="Toggle navigation menu"
-            >
-              {mobileMenuOpen ? <FiX size={20} /> : <FiMenu size={20} />}
-            </button>
-          </div>
+            <FiFileText size={15} />
+            <span>Resume</span>
+          </button>
+          <button
+            onClick={() => setMobileMenuOpen((open) => !open)}
+            className="inline-flex h-10 w-10 items-center justify-center border border-white/10 text-[#e8e2d6] transition-colors hover:border-[#c5a770]/60 hover:text-[#dec797] lg:hidden"
+            aria-label={mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+            aria-expanded={mobileMenuOpen}
+          >
+            {mobileMenuOpen ? <FiX size={19} /> : <FiMenu size={19} />}
+          </button>
         </div>
       </div>
 
-      {/* Mobile Drawer Navigation */}
       <AnimatePresence>
         {mobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.25 }}
-            className="md:hidden bg-[#0a0d17]/95 border-b border-slate-800/90 backdrop-blur-xl px-4 pt-3 pb-6 space-y-2 mt-2 shadow-2xl"
+          <motion.nav
+            aria-label="Mobile navigation"
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.18 }}
+            className="absolute inset-x-0 top-full border-b border-white/10 bg-[#11100e]/98 px-5 pb-5 pt-3 shadow-2xl backdrop-blur-xl sm:px-8 lg:hidden"
           >
-            {navLinks.map((link) => {
-              const isActive = activeSection === link.href.substring(1);
-              return (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  onClick={(e) => handleNavClick(e, link.href)}
-                  className={`block px-4 py-2.5 rounded-xl text-base font-medium transition-all ${
-                    isActive
-                      ? 'bg-gradient-to-r from-brand-indigo/30 to-brand-purple/30 text-white border border-brand-indigo/50'
-                      : 'text-slate-300 hover:bg-slate-800/60 hover:text-white'
-                  }`}
-                >
-                  {link.name}
-                </a>
-              );
-            })}
-
-            <div className="pt-3 border-t border-slate-800">
+            <div className="mx-auto grid max-w-[1440px] grid-cols-2 gap-x-5">
+              {navLinks.map((link) => {
+                const isActive = activeSection === link.href.slice(1);
+                return (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    onClick={(event) => handleNavClick(event, link.href)}
+                    aria-current={isActive ? 'location' : undefined}
+                    className={`border-b border-white/[0.06] py-3 text-sm transition-colors ${
+                      isActive ? 'text-[#dec797]' : 'text-[#aaa69d] hover:text-[#f4f0e7]'
+                    }`}
+                  >
+                    {link.name}
+                  </a>
+                );
+              })}
               <button
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  onOpenResume();
-                }}
-                className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-sm font-semibold bg-gradient-to-r from-brand-indigo to-brand-purple text-white shadow-lg shadow-indigo-600/30"
+                onClick={openResume}
+                className="mt-4 inline-flex items-center justify-center gap-2 border border-[#c5a770]/60 bg-[#c5a770] px-4 py-3 text-xs font-semibold uppercase tracking-[0.12em] text-[#14120e] transition-colors hover:bg-[#dec797] sm:hidden"
               >
-                <FiFileText size={18} />
-                <span>View & Download Resume</span>
+                <FiFileText size={15} />
+                Resume
               </button>
             </div>
-          </motion.div>
+          </motion.nav>
         )}
       </AnimatePresence>
     </header>

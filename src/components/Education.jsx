@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FiBookOpen, FiCalendar, FiMapPin, FiAward, FiCheckCircle } from 'react-icons/fi';
+import { FiBookOpen, FiCalendar, FiMapPin, FiAward, FiCheckCircle, FiExternalLink } from 'react-icons/fi';
 import { educationData } from '../data/portfolioData';
 
 export default function Education() {
@@ -61,14 +61,14 @@ export default function Education() {
               className="relative"
             >
               {/* Timeline Marker Node with Pulsing Glow */}
-              <div className="absolute -left-[31px] sm:-left-[47px] top-1.5 w-6 h-6 rounded-full bg-slate-900 border-2 border-brand-indigo flex items-center justify-center shadow-lg shadow-indigo-500/30">
-                <span className="w-2 h-2 rounded-full bg-brand-cyan animate-ping" />
+              <div className="absolute -left-[31px] sm:-left-[47px] top-1.5 w-6 h-6 rounded-full bg-slate-900 border border-brand-indigo/70 flex items-center justify-center">
+                <span className="w-1.5 h-1.5 rounded-full bg-brand-cyan" />
               </div>
 
               {/* Education Main Card */}
               <div className="glass-card rounded-3xl p-6 sm:p-8 border border-slate-800/90 hover:border-slate-700 transition-all duration-300 relative overflow-hidden group">
                 {/* Ambient glow accent */}
-                <div className="absolute -top-10 -right-10 w-40 h-40 bg-brand-indigo/10 rounded-full blur-3xl pointer-events-none group-hover:bg-brand-indigo/20 transition-colors" />
+                <div className="absolute -top-10 -right-10 w-40 h-40 bg-brand-indigo/[0.04] rounded-full blur-3xl pointer-events-none" />
 
                 <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
                   <span className="px-3 py-1 rounded-full text-xs font-mono font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
@@ -117,6 +117,18 @@ export default function Education() {
                     ))}
                   </div>
                 </div>
+
+                {edu.marksheetUrl && (
+                  <a
+                    href={edu.marksheetUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-brand-cyan hover:text-brand-purple transition-colors"
+                  >
+                    <FiExternalLink size={14} />
+                    View Marksheet
+                  </a>
+                )}
               </div>
             </motion.div>
           ))}

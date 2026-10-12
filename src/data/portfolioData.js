@@ -7,16 +7,16 @@
 
 export const personalInfo = {
   name: "Sunny Kapoor",
-  tagline: "Computer Science & Engineering Student | AI, Machine Learning & Software Development",
+  tagline: "Computer Science & Engineering",
   typingTitles: [
-    "Software Developer",
-    "CSE Student (CGPA: 9.28)",
-    "AI & ML Enthusiast",
-    "GATE Aspirant",
-    "Problem Solver"
+    "Software Development",
+    "AI/ML",
+    "Data",
+    "Problem Solving",
+    "Continuous Learning"
   ],
-  bioIntro: "I am a Computer Science & Engineering student at Bharati Vidyapeeth, Pune, and a GATE Aspirant passionate about Software Development, Artificial Intelligence, Machine Learning, and building impactful technology solutions.",
-  aboutText: "I am a Computer Science & Engineering student at Bharati Vidyapeeth (Deemed to be University), Pune (CGPA: 9.28) and a GATE Aspirant with hands-on experience developing Machine Learning and NLP applications, real-time IoT optimization systems, and data analytics tools. I combine practical engineering skills in Python, Java, SQL, and Streamlit with strong computer science fundamentals in Data Structures, Algorithms, DBMS, and Operating Systems.",
+  bioIntro: "I am a Computer Science & Engineering student at Bharati Vidyapeeth, Pune, focused on software development, AI/ML, and data-driven problem solving.",
+  aboutText: "I am a Computer Science & Engineering student at Bharati Vidyapeeth (Deemed to be University), Pune (CGPA: 9.28), with hands-on experience building AI/ML, NLP, and analytics solutions. I enjoy turning real-world problems into practical software and data-driven products using Python, Java, SQL, and modern ML workflows.",
   
   phone: "+91 7209383380",
   location: "Pune, India",
@@ -24,12 +24,12 @@ export const personalInfo = {
   // Real links
   socialLinks: {
     github: "https://github.com/iamsunnykapoor1",
-    linkedin: "https://linkedin.com/in/iamsunnykapoor1",
-    email: "iamsunnykapoor1@gmail.com",
+    linkedin: "https://www.linkedin.com/in/sunny-kapoor-539a4124b/",
+    email: "iamsunnykapoor7@gmail.com",
   },
   
   resumeUrl: "#resume-modal",
-  avatarUrl: "/avatar.svg",
+  avatarUrl: "/profile.jpg",
 };
 
 // ==============================================================================
@@ -193,7 +193,7 @@ export const projectsData = [
   },
   {
     id: "sms-spam-classifier",
-    title: "SMS & Email Spam Classifier",
+    title: "Email/SMS Spam Classifier",
     category: "Machine Learning & NLP",
     badge: "NLP Spam Detection",
     featured: true,
@@ -281,8 +281,9 @@ export const educationData = [
       "Mathematics",
       "Physics",
       "Chemistry",
-      "Computer Science Fundamentals"
-    ]
+      "Physical Education"
+    ],
+    marksheetUrl: `${import.meta.env.BASE_URL}education/class-12-marksheet.pdf`
   },
   {
     degree: "Class X",
@@ -296,7 +297,8 @@ export const educationData = [
       "Science",
       "Social Science",
       "English"
-    ]
+    ],
+    marksheetUrl: `${import.meta.env.BASE_URL}education/class-10-marksheet.pdf`
   }
 ];
 
@@ -329,7 +331,8 @@ export const achievementsData = [
     badge: "IIT Certified",
     icon: "FiCheckCircle",
     description: "Successfully completed formal NPTEL certification in DBMS from IIT Kharagpur, demonstrating mastery of SQL, schema normalization, transaction management, and indexing.",
-    date: "Certified"
+    date: "Certified",
+    certificateUrl: `${import.meta.env.BASE_URL}certificates/database-management-systems.pdf`
   },
   {
     category: "Certifications",
@@ -338,7 +341,8 @@ export const achievementsData = [
     badge: "IIT Certified",
     icon: "FiCheckCircle",
     description: "Successfully completed formal NPTEL certification in Theory of Computation from IIT Kanpur, covering regular languages, context-free grammars, Turing machines, and decidability.",
-    date: "Certified"
+    date: "Certified",
+    certificateUrl: `${import.meta.env.BASE_URL}certificates/theory-of-computation.pdf`
   },
   {
     category: "National Examination",

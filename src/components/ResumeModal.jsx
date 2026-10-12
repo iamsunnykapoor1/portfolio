@@ -68,7 +68,7 @@ export default function ResumeModal({ isOpen, onClose }) {
             <a
               href={`${import.meta.env.BASE_URL}resume.pdf`}
               download="Sunny_Kapoor_Resume.pdf"
-              className="flex-1 inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-gradient-to-r from-brand-indigo to-brand-purple hover:from-indigo-500 hover:to-purple-500 text-white font-semibold text-sm shadow-lg shadow-indigo-600/30 transition-all"
+              className="flex-1 inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-gradient-to-r from-brand-indigo to-brand-purple hover:from-indigo-500 hover:to-purple-500 text-[#14120e] font-semibold text-sm transition-all"
             >
               <FiDownload size={16} />
               <span>Download PDF</span>

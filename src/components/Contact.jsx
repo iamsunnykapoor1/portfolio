@@ -29,9 +29,10 @@ export default function Contact() {
       [e.target.name]: e.target.value
     }));
     if (errorMsg) setErrorMsg('');
+    if (submitted) setSubmitted(false);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
@@ -49,12 +50,33 @@ export default function Contact() {
     setIsSubmitting(true);
     setErrorMsg('');
 
-    // Simulate sending message
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      const response = await fetch('https://formspree.io/f/maeqjvlw', {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          name: formData.name.trim(),
+          email: formData.email.trim(),
+          message: formData.message.trim()
+        })
+      });
+
+      if (!response.ok) {
+        setErrorMsg(`Message could not be sent (error ${response.status}). Please email ${personalInfo.socialLinks.email} directly.`);
+        return;
+      }
+
       setSubmitted(true);
       setFormData({ name: '', email: '', message: '' });
-    }, 1000);
+    } catch (error) {
+      console.error('Contact form submission failed:', error);
+      setErrorMsg(`Could not connect to the message service. Please email ${personalInfo.socialLinks.email} directly.`);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -80,7 +102,7 @@ export default function Contact() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-heading text-white tracking-tight"
           >
-            Let's Build Something <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan via-brand-indigo to-brand-purple">Amazing Together 🚀</span>
+            Let's Build Something <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan via-brand-indigo to-brand-purple">Amazing Together</span>
           </motion.h2>
 
           <motion.p
@@ -298,7 +320,7 @@ export default function Contact() {
                   disabled={isSubmitting}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="w-full py-3.5 px-6 rounded-xl font-semibold text-white bg-gradient-to-r from-brand-indigo via-brand-purple to-pink-500 hover:from-indigo-500 hover:to-pink-600 shadow-lg shadow-indigo-600/30 transition-all flex items-center justify-center gap-2 disabled:opacity-50 cursor-pointer"
+                  className="w-full py-3.5 px-6 rounded-xl font-semibold text-[#14120e] bg-gradient-to-r from-brand-indigo via-brand-purple to-pink-500 hover:from-indigo-500 hover:to-pink-600 transition-all flex items-center justify-center gap-2 disabled:opacity-50 cursor-pointer"
                 >
                   {isSubmitting ? (
                     <span className="inline-flex items-center gap-2">

@@ -44,8 +44,9 @@ const skillIcons = {
 const categoryIcons = {
   "Programming": <FiCode className="text-brand-cyan" size={22} />,
   "Core Computer Science": <FiCpu className="text-brand-indigo" size={22} />,
-  "AI & Machine Learning": <FiActivity className="text-brand-purple" size={22} />,
-  "Tools & Environments": <FiTerminal className="text-emerald-400" size={22} />,
+  "Machine Learning & Data": <FiActivity className="text-brand-purple" size={22} />,
+  "Visualization & Tools": <FiTerminal className="text-brand-cyan" size={22} />,
+  "Tools & Environments": <FiTerminal className="text-brand-cyan" size={22} />,
 };
 
 export default function Skills() {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FiAward, FiCheckCircle, FiBookOpen, FiTrendingUp, FiStar } from 'react-icons/fi';
+import { FiAward, FiCheckCircle, FiBookOpen, FiTrendingUp, FiStar, FiExternalLink } from 'react-icons/fi';
 import { achievementsData } from '../data/portfolioData';
 
 const iconMap = {
@@ -106,12 +106,22 @@ export default function Achievements() {
               </div>
 
               {/* Status footer pill */}
-              <div className="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400 font-mono">
+              <div className="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between gap-3 text-xs text-slate-400 font-mono">
                 <span>Verified Milestone</span>
-                <span className="text-brand-cyan flex items-center gap-1">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                  Active Profile
-                </span>
+                {item.certificateUrl ? (
+                  <a
+                    href={item.certificateUrl}
+                    className="inline-flex items-center gap-1.5 text-brand-cyan hover:text-brand-purple transition-colors"
+                  >
+                    <FiExternalLink size={12} />
+                    View Certificate
+                  </a>
+                ) : (
+                  <span className="text-brand-cyan flex items-center gap-1">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                    Active Profile
+                  </span>
+                )}
               </div>
             </motion.div>
           ))}

@@ -9,7 +9,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative z-10 border-t border-slate-800/80 bg-[#06080d] py-12 px-4 sm:px-6 lg:px-8">
+    <footer className="relative z-10 border-t border-slate-800/80 bg-[#0a0908] py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
         {/* Brand & Copyright */}
         <div className="flex flex-col items-center sm:items-start gap-1">

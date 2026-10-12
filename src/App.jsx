@@ -15,8 +15,8 @@ export default function App() {
   const [isResumeOpen, setIsResumeOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-[#07090e] text-slate-100 relative selection:bg-brand-indigo/30 selection:text-brand-cyan">
-      {/* Dynamic Background Elements: Glowing Orbs, Grid & Floating Micro-Particles */}
+    <div className="min-h-screen relative text-slate-100 selection:bg-brand-indigo/30 selection:text-brand-cyan">
+      {/* Subtle ambient texture and gold lighting */}
       <BackgroundEffect />
 
       {/* Sticky Glassmorphic Navbar */}
@@ -24,7 +24,7 @@ export default function App() {
 
       {/* Main Portfolio Sections */}
       <main className="relative z-10">
-        <Hero />
+        <Hero onOpenResume={() => setIsResumeOpen(true)} />
         <About />
         <Skills />
         <Projects />

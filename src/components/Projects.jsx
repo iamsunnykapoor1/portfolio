@@ -19,6 +19,8 @@ import {
 } from 'react-icons/fi';
 import { projectsData } from '../data/portfolioData';
 
+const hasLiveDemo = (project) => project.liveUrl && !project.liveUrl.startsWith('https://github.com/');
+
 export default function Projects() {
   const [selectedProject, setSelectedProject] = useState(null);
 
@@ -32,10 +34,10 @@ export default function Projects() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-purple/10 border border-brand-purple/20 text-brand-purple text-xs font-mono uppercase tracking-wider mb-3"
+            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#c5a770]/10 border border-[#c5a770]/20 text-[#dec797] text-xs font-mono uppercase tracking-wider mb-3"
           >
             <FiLayers size={12} />
-            <span>Featured Portfolio Work</span>
+            <span>Selected Projects</span>
           </motion.div>
 
           <motion.h2
@@ -45,7 +47,7 @@ export default function Projects() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-heading text-white tracking-tight"
           >
-            Featured <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-indigo via-brand-purple to-pink-500">Projects</span>
+            Selected <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#dec797] via-[#c5a770] to-[#a98753]">Projects</span>
           </motion.h2>
 
           <motion.p
@@ -53,9 +55,9 @@ export default function Projects() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.15 }}
-            className="text-slate-400 text-sm sm:text-base max-w-xl mx-auto mt-3"
+            className="text-slate-400 text-sm sm:text-base max-w-2xl mx-auto mt-3"
           >
-            Practical engineering projects exploring IoT telemetry, predictive AI optimization, and real-world impact.
+            Projects where I apply software development, machine learning, AI, and data-driven problem solving.
           </motion.p>
 
           <motion.div
@@ -63,7 +65,7 @@ export default function Projects() {
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="w-20 h-1 bg-gradient-to-r from-brand-indigo via-brand-purple to-pink-500 mx-auto mt-4 rounded-full"
+            className="w-20 h-1 bg-gradient-to-r from-[#dec797] via-[#c5a770] to-[#a98753] mx-auto mt-4 rounded-full"
           />
         </div>
 
@@ -76,11 +78,11 @@ export default function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: index * 0.15 }}
-              whileHover={{ y: -8 }}
-              className="glass-card rounded-3xl border border-slate-800/90 hover:border-brand-indigo/50 transition-all duration-500 overflow-hidden flex flex-col justify-between group shadow-xl hover:shadow-2xl hover:shadow-indigo-500/10"
+              whileHover={{ y: -4 }}
+              className="glass-card rounded-2xl border border-slate-800/90 hover:border-brand-indigo/50 transition-all duration-300 overflow-hidden flex flex-col justify-between group shadow-xl"
             >
               {/* Card Top: Visual Banner / Architecture Preview */}
-              <div className="relative h-60 sm:h-64 bg-gradient-to-br from-slate-900 via-slate-950 to-[#07090e] p-6 border-b border-slate-800/80 overflow-hidden flex flex-col justify-between">
+              <div className="relative h-60 sm:h-64 bg-gradient-to-br from-slate-900 via-slate-950 to-[#0a0908] p-6 border-b border-slate-800/80 overflow-hidden flex flex-col justify-between">
                 {/* Ambient glow accent */}
                 <div 
                   className={`absolute -top-12 -right-12 w-44 h-44 rounded-full blur-3xl opacity-30 pointer-events-none ${
@@ -97,11 +99,11 @@ export default function Projects() {
                 />
 
                 {/* Top Badge & Category */}
-                <div className="flex items-center justify-between relative z-10">
-                  <span className="px-3 py-1 rounded-full text-xs font-mono font-semibold bg-brand-indigo/20 border border-brand-indigo/40 text-brand-cyan tracking-wide">
+                <div className="flex flex-wrap items-center justify-between gap-2 relative z-10">
+                  <span className="whitespace-nowrap px-3 py-1 rounded-full text-[10px] font-mono font-semibold bg-[#c5a770]/15 border border-[#c5a770]/25 text-[#dec797] tracking-[0.14em] uppercase">
                     {project.badge}
                   </span>
-                  <span className="text-xs font-mono text-slate-400">
+                  <span className="text-right text-[10px] font-mono leading-tight text-slate-400 tracking-[0.08em] uppercase">
                     {project.category}
                   </span>
                 </div>
@@ -115,21 +117,21 @@ export default function Projects() {
                         Prediction Pipeline Workflow
                       </p>
                       <div className="flex items-center justify-between gap-1 sm:gap-2 text-center">
-                        <div className="flex-1 p-1.5 sm:p-2 rounded-lg bg-slate-800/80 border border-slate-700/60">
+                        <div className="min-w-0 flex-1 p-1.5 sm:p-2 rounded-lg bg-slate-800/80 border border-slate-700/60">
                           <p className="text-[11px] font-semibold text-brand-cyan leading-tight">
                             Soil & Crop
                           </p>
                           <p className="text-[9px] text-slate-400 mt-0.5">NPK & pH</p>
                         </div>
-                        <FiArrowRight className="text-brand-indigo shrink-0 text-xs animate-pulse" />
-                        <div className="flex-1 p-1.5 sm:p-2 rounded-lg bg-indigo-950/60 border border-indigo-700/50">
+                        <FiArrowRight className="text-brand-indigo shrink-0 text-xs" />
+                        <div className="min-w-0 flex-1 p-1.5 sm:p-2 rounded-lg bg-indigo-950/60 border border-indigo-700/50">
                           <p className="text-[11px] font-semibold text-indigo-300 leading-tight">
                             DL Model
                           </p>
                           <p className="text-[9px] text-slate-400 mt-0.5">Pattern NN</p>
                         </div>
-                        <FiArrowRight className="text-brand-purple shrink-0 text-xs animate-pulse" />
-                        <div className="flex-1 p-1.5 sm:p-2 rounded-lg bg-emerald-950/60 border border-emerald-700/50">
+                        <FiArrowRight className="text-brand-purple shrink-0 text-xs" />
+                        <div className="min-w-0 flex-1 p-1.5 sm:p-2 rounded-lg bg-emerald-950/60 border border-emerald-700/50">
                           <p className="text-[11px] font-semibold text-emerald-300 leading-tight">
                             Optimal Rec
                           </p>
@@ -144,23 +146,23 @@ export default function Projects() {
                         Optimization Architecture
                       </p>
                       <div className="flex items-center justify-between gap-1 sm:gap-2 text-center">
-                        <div className="flex-1 p-1.5 sm:p-2 rounded-lg bg-slate-800/80 border border-slate-700/60">
+                        <div className="min-w-0 flex-1 p-1.5 sm:p-2 rounded-lg bg-slate-800/80 border border-slate-700/60">
                           <p className="text-[11px] font-semibold text-amber-400 leading-tight flex items-center justify-center gap-1">
                             <FiZap size={11} className="shrink-0" />
                             <span className="truncate">IoT & API</span>
                           </p>
                           <p className="text-[9px] text-slate-400 mt-0.5 truncate">kW & Weather</p>
                         </div>
-                        <FiArrowRight className="text-amber-500 shrink-0 text-xs animate-pulse" />
-                        <div className="flex-1 p-1.5 sm:p-2 rounded-lg bg-emerald-950/60 border border-emerald-700/50">
+                        <FiArrowRight className="text-amber-500 shrink-0 text-xs" />
+                        <div className="min-w-0 flex-1 p-1.5 sm:p-2 rounded-lg bg-emerald-950/60 border border-emerald-700/50">
                           <p className="text-[11px] font-semibold text-emerald-300 leading-tight flex items-center justify-center gap-1">
                             <FiCpu size={11} className="shrink-0" />
                             <span className="truncate">RF Model</span>
                           </p>
                           <p className="text-[9px] text-slate-400 mt-0.5 truncate">Flask REST</p>
                         </div>
-                        <FiArrowRight className="text-emerald-500 shrink-0 text-xs animate-pulse" />
-                        <div className="flex-1 p-1.5 sm:p-2 rounded-lg bg-cyan-950/60 border border-cyan-700/50">
+                        <FiArrowRight className="text-emerald-500 shrink-0 text-xs" />
+                        <div className="min-w-0 flex-1 p-1.5 sm:p-2 rounded-lg bg-cyan-950/60 border border-cyan-700/50">
                           <p className="text-[11px] font-semibold text-cyan-300 leading-tight flex items-center justify-center gap-1">
                             <FiActivity size={11} className="shrink-0" />
                             <span className="truncate">Streamlit</span>
@@ -176,23 +178,23 @@ export default function Projects() {
                         Chat Analytics Pipeline
                       </p>
                       <div className="flex items-center justify-between gap-1 sm:gap-2 text-center">
-                        <div className="flex-1 p-1.5 sm:p-2 rounded-lg bg-slate-800/80 border border-slate-700/60">
+                        <div className="min-w-0 flex-1 p-1.5 sm:p-2 rounded-lg bg-slate-800/80 border border-slate-700/60">
                           <p className="text-[11px] font-semibold text-emerald-400 leading-tight flex items-center justify-center gap-1">
                             <FiMessageSquare size={11} className="shrink-0" />
                             <span className="truncate">Raw Chat</span>
                           </p>
                           <p className="text-[9px] text-slate-400 mt-0.5 truncate">Export .txt</p>
                         </div>
-                        <FiArrowRight className="text-emerald-500 shrink-0 text-xs animate-pulse" />
-                        <div className="flex-1 p-1.5 sm:p-2 rounded-lg bg-teal-950/60 border border-teal-700/50">
+                        <FiArrowRight className="text-emerald-500 shrink-0 text-xs" />
+                        <div className="min-w-0 flex-1 p-1.5 sm:p-2 rounded-lg bg-teal-950/60 border border-teal-700/50">
                           <p className="text-[11px] font-semibold text-teal-300 leading-tight flex items-center justify-center gap-1">
                             <FiCpu size={11} className="shrink-0" />
                             <span className="truncate">NLP / Regex</span>
                           </p>
                           <p className="text-[9px] text-slate-400 mt-0.5 truncate">Pandas DF</p>
                         </div>
-                        <FiArrowRight className="text-teal-500 shrink-0 text-xs animate-pulse" />
-                        <div className="flex-1 p-1.5 sm:p-2 rounded-lg bg-cyan-950/60 border border-cyan-700/50">
+                        <FiArrowRight className="text-teal-500 shrink-0 text-xs" />
+                        <div className="min-w-0 flex-1 p-1.5 sm:p-2 rounded-lg bg-cyan-950/60 border border-cyan-700/50">
                           <p className="text-[11px] font-semibold text-cyan-300 leading-tight flex items-center justify-center gap-1">
                             <FiBarChart2 size={11} className="shrink-0" />
                             <span className="truncate">Streamlit</span>
@@ -208,23 +210,23 @@ export default function Projects() {
                         Spam Detection Architecture
                       </p>
                       <div className="flex items-center justify-between gap-1 sm:gap-2 text-center">
-                        <div className="flex-1 p-1.5 sm:p-2 rounded-lg bg-slate-800/80 border border-slate-700/60">
+                        <div className="min-w-0 flex-1 p-1.5 sm:p-2 rounded-lg bg-slate-800/80 border border-slate-700/60">
                           <p className="text-[11px] font-semibold text-purple-400 leading-tight flex items-center justify-center gap-1">
                             <FiMail size={11} className="shrink-0" />
                             <span className="truncate">Message</span>
                           </p>
                           <p className="text-[9px] text-slate-400 mt-0.5 truncate">SMS / Email</p>
                         </div>
-                        <FiArrowRight className="text-purple-500 shrink-0 text-xs animate-pulse" />
-                        <div className="flex-1 p-1.5 sm:p-2 rounded-lg bg-indigo-950/60 border border-indigo-700/50">
+                        <FiArrowRight className="text-purple-500 shrink-0 text-xs" />
+                        <div className="min-w-0 flex-1 p-1.5 sm:p-2 rounded-lg bg-indigo-950/60 border border-indigo-700/50">
                           <p className="text-[11px] font-semibold text-indigo-300 leading-tight flex items-center justify-center gap-1">
                             <FiCpu size={11} className="shrink-0" />
                             <span className="truncate">TF-IDF</span>
                           </p>
                           <p className="text-[9px] text-slate-400 mt-0.5 truncate">NLTK Tokenize</p>
                         </div>
-                        <FiArrowRight className="text-indigo-500 shrink-0 text-xs animate-pulse" />
-                        <div className="flex-1 p-1.5 sm:p-2 rounded-lg bg-pink-950/60 border border-pink-700/50">
+                        <FiArrowRight className="text-indigo-500 shrink-0 text-xs" />
+                        <div className="min-w-0 flex-1 p-1.5 sm:p-2 rounded-lg bg-pink-950/60 border border-pink-700/50">
                           <p className="text-[11px] font-semibold text-pink-300 leading-tight flex items-center justify-center gap-1">
                             <FiShield size={11} className="shrink-0" />
                             <span className="truncate">Naive Bayes</span>
@@ -273,7 +275,11 @@ export default function Projects() {
               {/* Card Bottom: Details & Action Buttons */}
               <div className="p-6 sm:p-7 flex-1 flex flex-col justify-between space-y-6">
                 <div>
-                  <h3 className="text-xl sm:text-2xl font-bold font-heading text-white group-hover:text-brand-cyan transition-colors mb-3 leading-snug">
+                  <div className="mb-3 flex items-center justify-between gap-3">
+                    <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#c5a770]">0{index + 1}</span>
+                    <span className="text-[10px] font-mono uppercase tracking-[0.14em] text-slate-500">Project</span>
+                  </div>
+                  <h3 className="text-xl sm:text-2xl font-bold font-heading text-white group-hover:text-[#dec797] transition-colors mb-3 leading-snug">
                     {project.title}
                   </h3>
 
@@ -316,15 +322,17 @@ export default function Projects() {
                     <span>GitHub Code</span>
                   </a>
 
-                  <a
-                    href={project.liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1 min-w-[130px] inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold bg-gradient-to-r from-brand-indigo to-brand-purple hover:from-indigo-500 hover:to-purple-500 text-white shadow-md shadow-indigo-600/20 transition-all group/btn"
-                  >
-                    <span>Live Demo</span>
-                    <FiExternalLink size={16} className="group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
-                  </a>
+                  {hasLiveDemo(project) && (
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 min-w-[130px] inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold bg-gradient-to-r from-brand-indigo to-brand-purple hover:from-indigo-500 hover:to-purple-500 text-[#14120e] transition-all group/btn"
+                    >
+                      <span>Live Demo</span>
+                      <FiExternalLink size={16} className="group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
+                    </a>
+                  )}
                 </div>
               </div>
             </motion.div>
@@ -382,15 +390,17 @@ export default function Projects() {
                 <FiGithub size={16} />
                 <span>View on GitHub</span>
               </a>
-              <a
-                href={selectedProject.liveUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-brand-indigo hover:bg-indigo-500 text-white text-sm font-semibold"
-              >
-                <FiExternalLink size={16} />
-                <span>Open Live Demo</span>
-              </a>
+              {hasLiveDemo(selectedProject) && (
+                <a
+                  href={selectedProject.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-brand-indigo hover:bg-indigo-500 text-[#14120e] text-sm font-semibold"
+                >
+                  <FiExternalLink size={16} />
+                  <span>Open Live Demo</span>
+                </a>
+              )}
             </div>
           </motion.div>
         </div>

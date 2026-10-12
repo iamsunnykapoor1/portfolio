@@ -1,4 +1,18 @@
 /** @type {import('tailwindcss').Config} */
+const mutedGold = {
+  50: '#f7f2e8',
+  100: '#eee4cf',
+  200: '#dec797',
+  300: '#d3b97e',
+  400: '#c5a770',
+  500: '#ad8d58',
+  600: '#8e7144',
+  700: '#705936',
+  800: '#51412a',
+  900: '#382d1f',
+  950: '#211a11',
+};
+
 export default {
   content: [
     "./index.html",
@@ -9,54 +23,54 @@ export default {
     extend: {
       colors: {
         dark: {
-          900: '#07090e',
-          800: '#0b0f19',
-          700: '#111827',
-          600: '#1e293b',
+          900: '#0a0908',
+          800: '#11100e',
+          700: '#191815',
+          600: '#25231f',
         },
         brand: {
-          blue: '#38bdf8',
-          cyan: '#22d3ee',
-          indigo: '#6366f1',
-          purple: '#a855f7',
-          violet: '#8b5cf6',
-        }
+          blue: '#c5a770',
+          cyan: '#dec797',
+          indigo: '#b99a65',
+          purple: '#a98753',
+          violet: '#b99a65',
+          rose: '#c5a770',
+          emerald: '#a6a080',
+        },
+        slate: {
+          50: '#f4f0e7',
+          100: '#e8e2d6',
+          200: '#d4cec1',
+          300: '#bcb6aa',
+          400: '#9d988e',
+          500: '#807b72',
+          600: '#625e57',
+          700: '#403e39',
+          800: '#292824',
+          900: '#191815',
+          950: '#0d0c0b',
+        },
+        blue: mutedGold,
+        sky: mutedGold,
+        cyan: mutedGold,
+        indigo: mutedGold,
+        purple: mutedGold,
+        violet: mutedGold,
+        pink: mutedGold,
+        teal: mutedGold,
+        emerald: mutedGold,
+        green: mutedGold,
+        amber: mutedGold,
+        orange: mutedGold,
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
         heading: ['Outfit', 'Inter', 'sans-serif'],
         mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
       },
-      animation: {
-        'gradient-x': 'gradient-x 15s ease infinite',
-        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-        'float': 'float 6s ease-in-out infinite',
-        'float-reverse': 'float-reverse 7s ease-in-out infinite',
-        'spin-slow': 'spin 12s linear infinite',
-      },
-      keyframes: {
-        'gradient-x': {
-          '0%, 100%': {
-            'background-size': '200% 200%',
-            'background-position': 'left center',
-          },
-          '50%': {
-            'background-size': '200% 200%',
-            'background-position': 'right center',
-          },
-        },
-        'float': {
-          '0%, 100%': { transform: 'translateY(0px)' },
-          '50%': { transform: 'translateY(-12px)' },
-        },
-        'float-reverse': {
-          '0%, 100%': { transform: 'translateY(0px)' },
-          '50%': { transform: 'translateY(12px)' },
-        },
-      },
       backgroundImage: {
         'radial-gradient': 'radial-gradient(circle at 50% 50%, var(--tw-gradient-stops))',
-        'hero-gradient': 'radial-gradient(circle at 50% 20%, rgba(99, 102, 241, 0.15), transparent 70%)',
+        'hero-gradient': 'radial-gradient(circle at 50% 20%, rgba(197, 167, 112, 0.12), transparent 70%)',
       },
     },
   },
