@@ -129,7 +129,7 @@ export const projectsData = [
       "OpenWeatherMap API"
     ],
     githubUrl: "https://github.com/iamsunnykapoor1/AI-Energy-Optimizer",
-    liveUrl: "https://github.com/iamsunnykapoor1/AI-Energy-Optimizer#quick-start-windows-powershell",
+    liveUrl: "https://ai-energy-optimizer-u4cnyldzvwfegfvkrqrc92.streamlit.app/",
     highlights: [
       "Live Streamlit analytics dashboard with real-time telemetry and automated energy-saving recommendations",
       "Flask REST backend serving /predict, /sensor_update, and /current_status endpoints",
